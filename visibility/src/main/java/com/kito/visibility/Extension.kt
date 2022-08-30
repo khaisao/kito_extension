@@ -2,6 +2,7 @@ package com.kito.visibility
 
 import android.app.Activity
 import android.content.Context
+import android.content.res.Resources
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Looper
@@ -12,30 +13,31 @@ import androidx.databinding.ktx.BuildConfig
 
 private const val TAG = "kito"
 
-    fun View.isVisible(): Boolean {
-        return visibility == View.VISIBLE
-    }
+fun View.isVisible(): Boolean {
+    return visibility == View.VISIBLE
+}
 
-    fun View.isInvisible(): Boolean {
-        return visibility == View.INVISIBLE
-    }
+fun View.isInvisible(): Boolean {
+    return visibility == View.INVISIBLE
+}
 
-    fun View.isGone(): Boolean {
-        return visibility == View.GONE
-    }
+fun View.isGone(): Boolean {
+    return visibility == View.GONE
+}
 
-    fun View.visible() {
-        this.visibility = View.VISIBLE
-    }
+fun View.visible() {
+    this.visibility = View.VISIBLE
+}
 
-    fun View.invisible() {
-        this.visibility = View.INVISIBLE
-    }
+fun View.invisible() {
+    this.visibility = View.INVISIBLE
+}
 
-    fun View.gone() {
-        this.visibility = View.GONE
-    }
-fun Any.logd(tag:String) {
+fun View.gone() {
+    this.visibility = View.GONE
+}
+
+fun Any.logd(tag: String) {
     if (!BuildConfig.DEBUG) return
     if (this is String) {
         Log.d(tag, this)
@@ -67,3 +69,9 @@ fun Context.isHaveConnect(activity: Activity): Boolean {
     }
     return isOnline
 }
+
+val Number.dp: Float
+    get() {
+        val scale = Resources.getSystem().displayMetrics.density
+        return this.toFloat() * scale + 0.5f
+    }
