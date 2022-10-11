@@ -14,7 +14,7 @@ import androidx.databinding.ktx.BuildConfig
 private const val TAG = "kito"
 
 fun View.isVisible(): Boolean {
-    return visibility == View.VISIBLE
+    return visibility ==  View.VISIBLE
 }
 
 fun View.isInvisible(): Boolean {
