@@ -16,6 +16,7 @@ private const val TAG = "kito"
 fun View.isVisible(): Boolean {
     return visibility  ==  View.VISIBLE
 }
+//test to remove
 
 fun View.isInvisible(): Boolean {
     return  visibility == View.INVISIBLE
